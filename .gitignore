@@ -1,0 +1,8 @@
+bin/*
+lib/*
+!lib/github.com/
+lib/github.com/*
+!lib/github.com/pzel/
+lib/github.com/pzel/*
+!lib/github.com/pzel/fetch/
+!lib/github.com/pzel/fetch/**

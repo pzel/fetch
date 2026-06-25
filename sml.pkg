@@ -1,0 +1,7 @@
+package github.com/pzel/fetch
+
+require {
+  github.com/pzel/assert 0.9.3 #dff0038113a4b45f0d3dbb65b1070ced5364adb9
+  github.com/pzel/jsonCvt 0.0.0-20260625193343+8a45d3084a54da597f5a45d419aa451dad70482d
+  github.com/pzel/sml-prelude 0.7.1 #0482abd021cc2d5a532b89f73ff9623105935e0f
+}
