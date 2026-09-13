@@ -1,10 +1,13 @@
 
 LIBDIR := lib/github.com/pzel/fetch
 MLCOMP ?= polymlb
-MLB_PATH := -mlb-path-var "SMLPKG $(shell pwd)/lib"
+SMLPKG_PATH := -mlb-path-var "SMLPKG $(shell pwd)/lib"
 
 ifeq ($(MLCOMP), polymlb)
 MLCOMP_FLAGS=-ann "ignoreFiles call-main.sml"
+POLY_PATH := -mlb-path-var "POLY \$$(SML_LIB)/basis/"
+else
+POLY_PATH := -mlb-path-var "POLY \$$(SMLPKG)/github.com/pzel/polyml-fill/"
 endif
 
 .PHONY: all
@@ -18,6 +21,8 @@ clean:
 test: bin/test
 	./$<
 
+COMP := $(MLCOMP) $(MLCOMP_FLAGS) $(SMLPKG_PATH) $(POLY_PATH) -output
+
 bin/test: $(shell find $(LIBDIR))
-	@$(MLCOMP) $(MLCOMP_FLAGS) $(MLB_PATH) -output $@ $(LIBDIR)/test/test.mlb
+	$(COMP) $@ $(LIBDIR)/test/test.mlb
 
