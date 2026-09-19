@@ -1,2 +1,6 @@
 $(SML_LIB)/basis/basis.mlb
+$(POLY)/poly.mlb
+$(SMLPKG)/github.com/pzel/assert/assert.mlb
+$(SMLPKG)/github.com/pzel/jsonCvt/jsonCvt.mlb
+$(SMLPKG)/github.com/pzel/sml-prelude/prelude.mlb
 fetch.sml

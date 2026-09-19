@@ -55,18 +55,8 @@ val dec = let open JsonCvt
                   (field "verses" (list vd))
           end
 
-fun fetch (url: string) (d: 'a JsonCvt.decoder) : (string,'a) sum =
-    let val proc = Unix.execute("/usr/bin/curl",["-s", url])
-        val s = Unix.textInstreamOf proc
-        val res = TextIO.inputAll s >| JsonCvt.decodeString d
-        val _ = TextIO.closeIn s
-        val _ = Unix.kill(proc, Posix.Signal.kill)
-    in
-      res
-    end
-
 fun main () =
-    let val res = fetch "https://bible-api.com/matt+25:31-33" dec (* quoteDecoder*)
+    let val res = Fetch.getJson "https://bible-api.com/matt+25:31-33" dec (* quoteDecoder*)
         val _ = PolyML.print_depth 100
     in
       PolyML.print res
