@@ -5,4 +5,5 @@ require {
   github.com/pzel/sml-prelude 0.7.2 #00f23d252271826780639697d4d8ddfff219b508
   github.com/pzel/assert 0.10.0 #117554f83f5d49448922d9216ba28fe863704d9e
   github.com/pzel/polyml-fill 0.1.0 #01c9fbe5d3a846c4930db770381f80cf31e7fff3
+  github.com/pzel/bytestring 0.1.0 #421d10c04edddb3ca43a8963f837ba6316d5ec1f
 }
